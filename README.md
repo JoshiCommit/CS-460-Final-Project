@@ -91,15 +91,21 @@
 
 - **The failure mode:** 
   - Greedy just picks the closest relic not looking at the possibility of the future and looking at how it might be more efficient to pick another relic in the long run
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
+- **Counter-example setup:** 
+  - S connects to A with cost 1 and B with cost 2
+  - A connects to B with cost 100 and T with cost 1
+  - B connects to A with cost 1 and T with 1
+  - Important to note there is no way to access anything from T
+- **What greedy picks:** 
+  -  Greedy will pick S -> A -> B -> T
+  - This results in a cost of 102 since there is no way for T to access B going T -> B
+- **What optimal picks:** 
+  - Optimal will pick S -> B -> A -> T
+  - Because it is able to see the cost of 100 ahead it makes a more optimal choice having a cost of 4
 - **Why greedy loses:** 
   - While choosing the closest relic seems like a good idea it can lead to a path that is worse overall since it does not account for future costs and only looks at the next relic cost
 
 ### What the Algorithm Must Explore
-
-> One bullet. Must use the word "order."
 
 - The algorithm has to look at different visiting orders for relics to determine the order that uses the least total fuel
 
