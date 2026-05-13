@@ -86,22 +86,19 @@
 
 ### Why Greedy Fails
 
-> State the failure mode. Then give a concrete counter-example using specific node names
-> or costs (you may use the illustration example from the spec). Three to five bullets.
-
 - **The failure mode:** 
   - Greedy just picks the closest relic not looking at the possibility of the future and looking at how it might be more efficient to pick another relic in the long run
 - **Counter-example setup:** 
   - S connects to A with cost 1 and B with cost 2
-  - A connects to B with cost 100 and T with cost 1
+  - A connects to B with cost 10 and T with cost 1
   - B connects to A with cost 1 and T with 1
   - Important to note there is no way to access anything from T
 - **What greedy picks:** 
   -  Greedy will pick S -> A -> B -> T
-  - This results in a cost of 102 since there is no way for T to access B going T -> B
+  - This results in a cost of 12 since there is no way for T to access B going T -> B
 - **What optimal picks:** 
   - Optimal will pick S -> B -> A -> T
-  - Because it is able to see the cost of 100 ahead it makes a more optimal choice having a cost of 4
+  - Because it is able to see the cost of 10 ahead it makes a more optimal choice having a cost of 4
 - **Why greedy loses:** 
   - While choosing the closest relic seems like a good idea it can lead to a path that is worse overall since it does not account for future costs and only looks at the next relic cost
 
@@ -115,33 +112,28 @@
 
 ### Part 5a: State Representation
 
-> Document the three components of your search state as a table.
-> Variable names here must match exactly what you use in torchbearer.py.
-
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Current location | curr_loc | node | Node where torchbearer is currently |
+| Relics already collected | relics_col | set | Storing which relics have already been collected |
+| Fuel cost so far | fuel_curr | float | Total fuel cost so far |
 
 ### Part 5b: Data Structure for Visited Relics
 
-> Fill in the table.
-
 | Property | Your answer |
 |---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Data structure chosen | set |
+| Operation: check if relic already collected | Time complexity: O(1)|
+| Operation: mark a relic as collected | Time complexity: O(1)|
+| Operation: unmark a relic (backtrack) | Time complexity: O(1)|
+| Why this structure fits | Set allows you to easily check if a relic has already been collected or not, also has the add and remove operations needed for backtracking|
 
 ### Part 5c: Worst-Case Search Space
 
-> Two bullets.
-
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** 
+  - k!
+- **Why:** 
+  - Algorithm has to rearch through every single combination of reaching the relics
 
 ---
 
