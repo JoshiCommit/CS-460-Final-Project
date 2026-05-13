@@ -9,7 +9,7 @@
 ## Part 1: Problem Analysis
 
 - **Why a single shortest-path run from S is not enough:**
-  - The reason that a single shortest-path run from S is not sufficient is due to the fact that this will only give you the shortest path from the enterance to S. 
+  - The reason that a single shortest-path run from S is not sufficient is due to the fact that this will only give you the shortest path from the entrance to S. 
   - This isn't all that the problem is asking however we also need to find what order the relic chambers need to be visited which a single shortest-path run from S will not be able to suffice.
 
 - **What decision remains after all inter-location costs are known:**
@@ -26,25 +26,33 @@
 
 | Source Node Type | Why it is a source |
 |---|---|
-| Enterance node | This is the starting point for the route so we need Dijkstra to get the cheapest cost from enterance to each relic |
+| Entrance node | This is the starting point for the route so we need Dijkstra to get the cheapest cost from entrance to each relic and exit |
 | Relic Chamber node | After reaching a relic Dijkstra is needed to travel to the next relic |
 
 ### Part 2b: Distance Storage
 
 | Property | Your answer |
 |---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Data structure name | Dictionary of dictionaries|
+| What the keys represent | Keys represent the source node and the destination node|
+| What the values represent | Minimum fuel cost from source node to the specific node |
+| Lookup time complexity | O(1) |
+| Why O(1) lookup is possible | Hashing allows for O(1) averages |
 
 ### Part 2c: Precomputation Complexity
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** 
+  - k + 1
+  - k is the number of relics
+  - Running from S once and from each relic once
+- **Cost per run:**
+  - ASSIGNMENT.md states "Single shortest-path run costs O(m log n)."
+  - Keeping in mind Let n = |V|, m = |E|, k = |M|
+- **Total complexity:** 
+  - O(k + 1) * O(m log n)
+  - O((k + 1) m log n)
+- **Justification (one line):**
+  - We know that Dijkstra has to run once from the source till a relic and then from each relic, with each run costing O(m log n)
 
 ---
 
