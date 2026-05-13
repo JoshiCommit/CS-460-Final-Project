@@ -41,8 +41,6 @@
 
 ### Part 2c: Precomputation Complexity
 
-> State the total complexity and show the arithmetic. Two to three lines max.
-
 - **Number of Dijkstra runs:** _your answer_
 - **Cost per run:** _your answer_
 - **Total complexity:** _your answer_
@@ -51,9 +49,6 @@
 ---
 
 ## Part 3: Algorithm Correctness
-
-> Document your understanding of why Dijkstra produces correct distances.
-> Bullet points and short sentences throughout. No paragraphs.
 
 ### Part 3a: What the Invariant Means
 
@@ -64,8 +59,6 @@
   - Current distance is the shortest known distance using a path that goes through nodes who are already finalized
 
 ### Part 3b: Why Each Phase Holds
-
-> One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
   - All nodes are undiscovered at this point meaning that their distances are set to infiity and only the starting point is known which is given to have a distance of 0 meaning that there is no incorrect distances.
@@ -79,7 +72,6 @@
 ### Part 3c: Why This Matters for the Route Planner
  - If the distances are off then there is a high chance that the algorithm might choose a route that isn't as optimal as it could be which leads to burning more fuel than needed.
 
-
 ---
 
 ## Part 4: Search Design
@@ -89,17 +81,19 @@
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
+- **The failure mode:** 
+  - Greedy just picks the closest relic not looking at the possibility of the future and looking at how it might be more efficient to pick another relic in the long run
 - **Counter-example setup:** _Your answer here._
 - **What greedy picks:** _Your answer here._
 - **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **Why greedy loses:** 
+  - While choosing the closest relic seems like a good idea it can lead to a path that is worse overall since it does not account for future costs and only looks at the next relic cost
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- The algorithm has to look at different visiting orders for relics to determine the order that uses the least total fuel
 
 ---
 
@@ -167,4 +161,7 @@
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- Lecture Notes used for basically the whole assignment
+- ChatGPT used to find out how to use GitHub
+- Abdul Bari Dijkstra Algorithm video https://www.youtube.com/watch?v=XB4MIexjvY0&t=981s&pp=ygUVZGlqa3N0cmEgYWxnb3JpdG1hc8Sx used to gain an understanding of Dijkstra's algorithm for Part 2 onwards verified with Geeks for Geeks and Lecture Notes
+- Geeks for Geeks Dijkstra's Algorithm article https://www.geeksforgeeks.org/dsa/dijkstras-shortest-path-algorithm-greedy-algo-7/ used to gain an understanding of Dijkstra's algorithm for Part 2 onwards verified with Abdul Bari's YouTube video.
