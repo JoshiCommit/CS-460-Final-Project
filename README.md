@@ -4,17 +4,9 @@
 **Student ID:** 827985022
 **Course:** CS 460 – Algorithms | Spring 2026
 
-> This README is your project documentation. Write it the way a developer would document
-> their design decisions , bullet points, brief justifications, and concrete examples where
-> required. You are not writing an essay. You are explaining what you built and why you built
-> it that way. Delete all blockquotes like this one before submitting.
-
 ---
 
 ## Part 1: Problem Analysis
-
-> Document why this problem is not just a shortest-path problem. Three bullet points, one
-> per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
   - The reason that a single shortest-path run from S is not sufficient is due to the fact that this will only give you the shortest path from the enterance to S. 
@@ -32,16 +24,12 @@
 
 ### Part 2a: Source Selection
 
-> List the source node types as a bullet list. For each, one-line reason.
-
 | Source Node Type | Why it is a source |
 |---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Enterance node | This is the starting point for the route so we need Dijkstra to get the cheapest cost from enterance to each relic |
+| Relic Chamber node | After reaching a relic Dijkstra is needed to travel to the next relic |
 
 ### Part 2b: Distance Storage
-
-> Fill in the table. No prose required.
 
 | Property | Your answer |
 |---|---|
@@ -69,33 +57,28 @@
 
 ### Part 3a: What the Invariant Means
 
-> Two bullets: one for finalized nodes, one for non-finalized nodes.
-> Do not copy the invariant text from the spec.
-
 - **For nodes already finalized (in S):**
-  _Your answer here._
+  - Current distance is for sure the shortest distance to the node meaning that their values are set in stone
 
 - **For nodes not yet finalized (not in S):**
-  _Your answer here._
+  - Current distance is the shortest known distance using a path that goes through nodes who are already finalized
 
 ### Part 3b: Why Each Phase Holds
 
 > One to two bullets per phase. Maintenance must mention nonnegative edge weights.
 
 - **Initialization : why the invariant holds before iteration 1:**
-  _Your answer here._
+  - All nodes are undiscovered at this point meaning that their distances are set to infiity and only the starting point is known which is given to have a distance of 0 meaning that there is no incorrect distances.
 
 - **Maintenance : why finalizing the min-dist node is always correct:**
-  _Your answer here._
+  - Since the algorithm will pick the node with the shortest distance and all edge weights are nonnegative meaning distance cannot possibly get shorter more efficient paths cannot be found to the node.
 
 - **Termination : what the invariant guarantees when the algorithm ends:**
-  _Your answer here._
+  - By the end all nodes which are reachable will have the shortest distances mapped out and all nodes unreachable will have a distance of infinity
 
 ### Part 3c: Why This Matters for the Route Planner
+ - If the distances are off then there is a high chance that the algorithm might choose a route that isn't as optimal as it could be which leads to burning more fuel than needed.
 
-> One sentence connecting correct distances to correct routing decisions.
-
-_Your answer here._
 
 ---
 
