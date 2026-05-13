@@ -17,13 +17,14 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  - The reason that a single shortest-path run from S is not sufficient is due to the fact that this will only give you the shortest path from the enterance to S. 
+  - This isn't all that the problem is asking however we also need to find what order the relic chambers need to be visited which a single shortest-path run from S will not be able to suffice.
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  - The structural decision that remains after the iner-locational travel costs are known is what order to visit the relic chambers in.
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  - Since relic order needs to be determined and this can make different total fuel costs we need a search over order to find a efficient visit order instead of a single computation givign shortest path from A - B.
 
 ---
 
