@@ -130,7 +130,6 @@ These answers also go into `explain_problem()` in your code.
 Your three bullets must address:
 
 1. Why a single shortest-path run from S is not sufficient, name the specific decision
-   it cannot make.
 2. What structural decision remains after all inter-location travel costs are known.
 3. In one sentence: why this problem is a search over orders, not a single computation.
 
