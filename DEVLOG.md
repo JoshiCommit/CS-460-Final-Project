@@ -3,28 +3,17 @@
 **Student Name:** Deepanshu Joshi
 **Student ID:** 827985022
 
-> Instructions: Write at least four dated entries. Required entry types are marked below.
-> Two to five sentences per entry is sufficient. Write entries as you go, not all in one
-> sitting. Graders check that entries reflect genuine work across multiple sessions.
-> Delete all blockquotes before submitting.
+---
+
+## Entry 1 – [5/12]: Initial Plan
+
+I plan on first going through the README.md file and completing it completely. I think this will give me a better base than doing the README.md and torchbearer.py files at the same time since I will be able to see the whole overview of the program and understand the process well. I expect the hardest part of the program to be just making sure that the route is as optimal as possible. I think there might be a point where my algorithm is able to find the optimal route but it will not classify the route as the most optimal. I will test using the provided test cases
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 2 – [5/13]: [Short description]
 
-> Required. Write this before writing any code. Describe your plan: what you will
-> implement first, what parts you expect to be difficult, and how you plan to test.
-
-_Your entry here._
-
----
-
-## Entry 2 – [Date]: [Short description]
-
-> Required. At least one entry must describe a bug, wrong assumption, or design change
-> you encountered. Describe what went wrong and how you resolved it.
-
-_Your entry here._
+Working on the coding for Dijkstra's algorithm and I forgot about the neighbors the first time I implemented. After some digging around I realized that i was not actually getting all the needed nodes and was able to fix the problem. Fixed by just accounting for the neighbor nodes and adding them intot he set.
 
 ---
 
@@ -44,16 +33,15 @@ _Your entry here._
 ---
 
 ## Final Entry – [Date]: Time Estimate
-
-> Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
+## PART TIME ESTIMATES ARE JUST FOR THE README THE CODE IS ALL WITHIN IMPLEMENTATION
 
 | Part | Estimated Hours |
 |---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
+| Part 1: Problem Analysis | 20 Minutes |
+| Part 2: Precomputation Design | 1 Hour |
+| Part 3: Algorithm Correctness | 30 Minutes |
+| Part 4: Search Design | 45 Minutes |
+| Part 5: State and Search Space | 30 Minutes |
 | Part 6: Pruning | |
 | Part 7: Implementation | |
 | README and DEVLOG writing | |
