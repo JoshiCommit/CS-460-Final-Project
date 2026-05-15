@@ -19,20 +19,17 @@ Working on the coding for Dijkstra's algorithm and I forgot about the neighbors 
 
 ## Entry 3 – [Date]: [Short description]
 
-_Your entry here._
+Worked on backtrack for a period and it didn't go the best for a while. Relics were staying visted even though they weren't which was causing incorrect results.Also added pruning logic becuase I realized the second I find out a route is more expensive than the last I can end execution there instead of looking at the whole route.
 
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – [5/14]: Post-Implementation Reflection
 
-> Required. Written after your implementation is complete. Describe what you would
-> change or improve given more time.
-
-_Your entry here._
+After completing the assignment I can say with full confidence that _explore was the hardest. If I had more time to work on this assignment I would make the searches a little more optimal than the currently are. I think the biggest problem I faced was doing a lot of the assignment at once and then taking a big break until right before it was due.
 
 ---
 
-## Final Entry – [Date]: Time Estimate
+## Final Entry – [5/14]: Time Estimate
 ## PART TIME ESTIMATES ARE JUST FOR THE README THE CODE IS ALL WITHIN IMPLEMENTATION
 
 | Part | Estimated Hours |
@@ -42,7 +39,7 @@ _Your entry here._
 | Part 3: Algorithm Correctness | 30 Minutes |
 | Part 4: Search Design | 45 Minutes |
 | Part 5: State and Search Space | 30 Minutes |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+| Part 6: Pruning | 1 Hour |
+| Part 7: Implementation | 6 Hours |
+| README and DEVLOG writing | 4 Hours |
+| **Total** | About 14 Hours|

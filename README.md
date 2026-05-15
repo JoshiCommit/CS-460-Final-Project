@@ -9,14 +9,14 @@
 ## Part 1: Problem Analysis
 
 - **Why a single shortest-path run from S is not enough:**
-  - The reason that a single shortest-path run from S is not sufficient is due to the fact that this will only give you the shortest path from the entrance to S. 
+  - The reason that a single shortest-path run from S is not sufficient is due to the fact that this will only give you the shortest path from the entrance to other nodes. 
   - This isn't all that the problem is asking however we also need to find what order the relic chambers need to be visited which a single shortest-path run from S will not be able to suffice.
 
 - **What decision remains after all inter-location costs are known:**
   - The structural decision that remains after the iner-locational travel costs are known is what order to visit the relic chambers in.
 
 - **Why this requires a search over orders (one sentence):**
-  - Since relic order needs to be determined and this can make different total fuel costs we need a search over order to find a efficient visit order instead of a single computation givign shortest path from A - B.
+  - Since relic order needs to be determined and this can make different total fuel costs we need a search over order to find a efficient visit order instead of a single computation giving shortest path from A - B.
 
 ---
 
@@ -114,9 +114,9 @@
 
 | Component | Variable name in code | Data type | Description |
 |---|---|---|---|
-| Current location | curr_loc | node | Node where torchbearer is currently |
-| Relics already collected | relics_col | set | Storing which relics have already been collected |
-| Fuel cost so far | fuel_curr | float | Total fuel cost so far |
+| Current location | current_loc | node | Node where torchbearer is currently |
+| Relics already collected | relics_visited_order | set | Storing which relics have already been collected |
+| Fuel cost so far | cost_so_far | float | Total fuel cost so far |
 
 ### Part 5b: Data Structure for Visited Relics
 
@@ -133,7 +133,7 @@
 - **Worst-case number of orders considered:** 
   - k!
 - **Why:** 
-  - Algorithm has to rearch through every single combination of reaching the relics
+  - Algorithm has to search through every single combination of reaching the relics
 
 ---
 
@@ -141,31 +141,29 @@
 
 ### Part 6a: Best-So-Far Tracking
 
-> Three bullets.
-
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** 
+  - Tracking the route that has the lowest cost and the relic order that achieved this
+- **When it is used:** 
+  - Used to compare to the current route that is happening
+- **What it allows the algorithm to skip:** 
+  - Skip parts that cannot be improved
 
 ### Part 6b: Lower Bound Estimation
 
-> Three bullets.
-
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** 
+  - Current location, fuel cost so far, and precomputed shortest distances between all nodes
+- **What the lower bound accounts for:** 
+  - Minimum possible cost to reach exit from current location
+- **Why it never overestimates:** 
+  - Because estimates in shortest path distances can be lower but never higher
 
 ### Part 6c: Pruning Correctness
-
-> One to two bullets. Explain why pruning is safe.
-
-- _Your answer here._
+  - If the total cost so far is equal to or higher then it best possible route found so far there is no way it can be more optimal
+  - Edges are nonnegative so you cannot get a more optimal route if the route is already worse
 
 ---
 
 ## References
-
-> Bullet list. If none beyond lecture notes, write that.
 
 - Lecture Notes used for basically the whole assignment
 - ChatGPT used to find out how to use GitHub

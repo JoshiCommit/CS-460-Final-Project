@@ -179,10 +179,6 @@ Consider one run of Dijkstra's algorithm from source `x`. Let `S` be the set of 
 whose shortest-path distances have been finalized. Let `dist[v]` be the current estimate
 for node `v`. The following invariant holds at the start of every main loop iteration:
 
-> For every vertex v in S, dist[v] is the true shortest-path distance from x to v.
-> For every vertex u not in S, dist[u] is the length of the shortest discovered path
-> from x to u whose internal vertices all lie in S.
-
 ### Part 3a: Invariant Explanation (4 points)
 
 Two bullets in the README template: one for finalized nodes, one for non-finalized nodes.
